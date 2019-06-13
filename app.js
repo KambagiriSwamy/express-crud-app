@@ -48,7 +48,11 @@ app.use(function (err, req, res, next) {
 });
 
 
-mongoose.connect('mongodb://localhost/test').then(async () => {
+// mongoose.connect('mongodb://localhost/test').then(async () => {
+mongoose.connect(
+  'mongodb+srv://giri:Giri%4052@cluster0-zqcst.gcp.mongodb.net/test?retryWrites=true&w=majority',
+  { useNewUrlParser: true }
+).then(async () => {
   app.listen(process.env.PORT, () =>
     console.log(`Example app listening on port ${process.env.PORT}!`),
   );
